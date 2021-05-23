@@ -136,12 +136,14 @@ class Customer extends Person {
   }
 
   _isInRange = vendor => {
-    this.location.distanceTo(vendor.location) <= vendor.range;
+    return this.location.distanceTo(vendor.location) <= vendor.range;
   }
 
 
+
+
   _haveEnoughMoney = (vendor, numberOfIceCreams) => {
-    this.wallet.money >= numberOfIceCreams * vendor.price;
+    return this.wallet.money >= numberOfIceCreams * vendor.price;
 
   }
 
@@ -150,9 +152,6 @@ class Customer extends Person {
       vendor.sellTo(this, numberOfIceCreams);
     }
   }
-
-
-
 }
 
 export { Point, Wallet, Person, Customer, Vendor };
